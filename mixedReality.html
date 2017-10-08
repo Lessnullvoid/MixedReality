@@ -1,0 +1,107 @@
+<!-- 
+mixedReality.
+=============
+>> interspecifics // mecanosaurio
+<< abandon normal devices 2017
+
+v.0.5
+-disarm js snapshot capabilities
+-adding p5.js support for graphics
+v.0.6
+-remove service worker
+-add better textbox
+v.0.7
+-add fonting
+-add city filter
+-add graphs
+v.0.8
+-texts on div .
+-better graph .
+-better align .
+-ios support? not
+v.0.9
+-clean and filter on selection
+
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>/mixedReality 0.9/</title>
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="etc/styles.css">
+    <meta id="theme-color" name="theme-color" content="#37474F">
+    <meta name=”apple-mobile-web-app-capable” content=”yes”>
+    <!-- Web Manifest -->
+    <link rel="manifest" href="manifest.json">
+  </head>
+
+
+  <body>
+
+    <!-- container for bar -->
+    <div class="container_bar" id='barrac1'>
+      <div class ="row_bar">
+        <div class="cell_bar" id="titulon">        
+          <h3 id='titular'>MIXEDREALITY</h3>
+        </div>
+        <div class="cell_bar" id="choice">   
+          <select id ="locations" onchange="hereIs(this.value)">
+            <option value="0" selected="selected" disabled>Where are you? ...</option>
+            <option value="mex">MEX</option> 
+            <option value="bra" >BRA</option>
+            <option value="arg">ARG</option>
+          </select>     
+        </div>
+      </div>
+    </div>
+
+
+    <!-- container for cam. -->
+    <div class="container_cam" id ="laapp">
+      <div class="app">
+        <a href="#" id="start-camera" class="visible">Toca aqu1 para comenzar la app.</a>
+        <video muted id="camera-stream"></video>
+        <img id="snap">
+        <p id="error-message"></p>
+        <p class="letrero" id="other-message" hidden>__mixedReality__</p>
+      </div>
+    </div>
+
+    <div class="textbox_holder" id="cajatexto">
+    </div>
+
+    <!-- container for graphs. -->
+    <div class="container_graphs" >
+      <div class ="row_graphs">
+        <div class="cell_graphs" id="sketch-holder">   
+        </div>
+      </div>
+    </div>
+
+
+    <!-- External data and scripts -->
+    <script src="etc/jquery-3.2.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://rawgit.com/mecanosaurio/mixedReality/master/data.js"></script>
+
+    <script>
+    // remove and appends
+    var select = $('#locations');
+    select.empty().append('<option value="N" selected="selected" disabled>Where are you?..</option>');
+    for (i=0; i<10; i++){
+      select.append('<option value="'+(i)+'">'+loc_all[i][0]+'</option>');
+    }
+    </script>
+
+    <!-- register local n camera app. -->
+    <script src="etc/camera.js"></script>
+
+    <!-- P5 sketch plus -->
+    <script language="javascript" type="text/javascript" src="etc/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="etc/p5.dom.js"></script>
+    <script language="javascript" type="text/javascript" src="etc/sketch.js"></script>
+
+  </body>
+</html>

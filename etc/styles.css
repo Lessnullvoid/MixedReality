@@ -1,0 +1,213 @@
+/*
+mixedReality.
+=============
+>> interspecifics // mecanosaurio
+<< abandon normal devices 2017
+*/
+
+@font-face {
+    font-family: 'Occupied'; /*a name to be used later*/
+    font-style: normal;
+    src: url('Occupied.ttf'); /*URL to font*/
+}
+
+
+html{
+    background-color: #000;
+    font:normal 16px/1.5 sans-serif;
+    color: #FFFFFF;
+}
+
+h3{
+    font-family: 'Occupied';
+    font-size: 32px;
+}
+
+/* --- --- --- container bar */
+.container_bar {
+    max-width: 1000px;
+    padding-bottom: 10px;
+    margin: 2px auto;
+    margin-top: -20px;
+    margin-bottom: -20px
+}
+
+.row_bar {
+    display: inline-block;
+    text-align: center;
+    max-height: 100%;
+    width: 100%;
+}
+
+.cell_bar {
+    display: inline-block;
+    text-align: left;
+    width: 45%;
+    height: 100%;
+}
+
+
+.cell_bar #locations{
+    display: inline-block;
+    text-align: left;
+    width: 95%;
+    padding-top: 6px;
+}
+
+.clear {
+    clear: both;
+}
+
+select{
+    background: transparent;
+    color: white;
+    width: 45%;
+    font-size: 14px;
+    border: 1px solid #CCCCCC;
+    height: 34px;
+}
+
+option {
+    font-size: 14px;
+    height: 20px;
+}
+
+
+
+
+/* --- --- --- container graphs */
+.container_graphs {
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    text-align: center;
+}
+.row_graphs {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
+.cell_graphs {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+#graphs{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
+
+
+
+/* --- --- --- texts */
+.text_block{
+  font-family: sans-serif;
+  background-color:#000;
+  opacity: 0.6;
+  width: 250px;
+  font-size: 7pt;
+}
+.text_head{
+  font-family: sans-serif;
+  background-color:#A0A0A0;
+  color: #FFFFFF;
+  opacity: 0.9;
+  width: 248px;
+  font-size: 7pt;
+  margin: 0;
+  padding: 0;
+  padding-left: 2px;    
+}
+.text_block p{
+  margin: 0;
+  padding: 0;
+  padding-left: 2px;    
+  color: #EEEEEE;
+}
+.text_green{
+  color: #88FF99;
+}
+.text_blue{
+  color: #8888FF;
+}
+
+
+
+
+/* --- --- --- container cam */
+.container_cam{
+    max-width: 1000px;
+    margin: 2px auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: #00cc00;
+}
+
+.app{
+    width: 100%;
+    position: relative;
+}
+
+.app #start-camera{
+    display: none;
+    border-radius: 2px;
+    max-width: 400px;
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 10px;
+    opacity: 0.8;
+    margin: 10px;
+    text-align: center;
+}
+
+.app video#camera-stream{
+    display: none;
+    width: 100%;
+}
+
+.app #error-message{
+    width: 100%;
+    background-color: #ccc;
+    color: #9b9b9b;
+    font-size: 28px;
+    padding: 200px 100px;
+    text-align: center;
+    display: none;
+}
+
+.app video#camera-stream.visible,
+.app img#snap.visible,
+.app #error-message.visible {
+    display: block;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@media(max-width: 1000px) {
+    .container{
+        margin: 2px;
+    }
+    .app #start-camera.visible{
+        display: block;
+    }
+}
+
+@media(max-width: 600px) {
+    .container{
+        margin: 2px;
+    }
+    .app #start-camera.visible{
+        display: block;
+    }
+    .app #error-message{
+        padding: 10px 10px;
+        font-size: 18px;
+    }
+}
+
